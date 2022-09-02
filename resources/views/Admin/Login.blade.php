@@ -33,7 +33,7 @@
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
@@ -50,11 +50,11 @@
                   </div>
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
-                <div class="mb-2">
+                <!-- <div class="mb-2">
                   <button type="button" class="btn btn-block btn-facebook auth-form-btn">
                     <i class="ti-facebook mr-2"></i>Connect using facebook
                   </button>
-                </div>
+                </div> -->
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="{{route('register')}}" class="text-primary">Create</a>
                 </div>

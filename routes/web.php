@@ -20,4 +20,4 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/',[AdminController::class,'Login'])->name('login');
 Route::get('/register',[AdminController::class,'Register'])->name('register');
-Route::get('/admin/dashboard',[AdminController::class,'Home'])->name('admin');
+Route::get('/dashboard',[AdminController::class,'Home'])->name('admin');
