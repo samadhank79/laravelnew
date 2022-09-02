@@ -3,10 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\DbUser;
 class AdminController extends Controller
 {
     function Login(Request $request){
+        if($request->input('login')){
+            $request->validate([
+                'email' => 'required',
+                'passwd' => 'required|min:8|regex:/[a-z]/',
+
+            ]);
+            $email = $request->input('email');
+            $password = $request->input('passwd');
+            $veryEmail =  DbUser::where('email',$email)->first();
+            if($veryEmail){
+                if(Hash::check($password,$veryEmail->password)){
+                    if($veryEmail->designation === 'compoffice'){
+                        return  redirect()->route('admin');
+                    }
+                }
+            }
+            
+            
+        }
         return view('Admin.Login');
     }
     function Register(Request $request){
@@ -21,7 +41,7 @@ class AdminController extends Controller
             $user = new DbUser;
             $user->name = $request->input('name');
             $user->email = $request->input('email');
-            $user->password = $request->input('passwd');
+            $user->password = Hash::make($request->input('passwd'));
             $user->designation = $request->input('designation');
             $user->save();
         }
