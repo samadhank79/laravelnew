@@ -31,23 +31,36 @@
               </div>
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Name">
+              <form class="pt-3" method="POST">
+                <div class="form-group" >
+                  @csrf
+                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Name" name="name" value="{{old('name')}}">
+                  @error('name')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email" value="{{old('email')}}">
+                  @error('email')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="form-group">
-                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                    <option>Degignation</option>
-                    <option>Compliance Officer</option>
+                  <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="designation">
+                    <option value="">Degignation</option>
+                    <option value="compoffice">Compliance Officer</option>
                     
                     
                   </select>
+                  @error('designation')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="passwd" value="{{old('passwd')}}">
+                  @error('passwd')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="mb-4">
                   <div class="form-check">
@@ -57,9 +70,10 @@
                     </label>
                   </div>
                 </div>
-                <div class="mt-3">
+                <input type="submit" name="register" value="Signup" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                <!-- <div class="mt-3">
                   <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
-                </div>
+                </div> -->
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="{{route('login')}}" class="text-primary">Login</a>
                 </div>
