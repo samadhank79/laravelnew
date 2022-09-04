@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SenderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,16 @@ use App\Http\Controllers\AdminController;
 // });
 
 
-Route::get('/',[AdminController::class,'Login'])->name('login');
-Route::post('/',[AdminController::class,'Login'])->name('login');
-Route::get('/register',[AdminController::class,'Register'])->name('register');
-Route::post('/register',[AdminController::class,'Register'])->name('register');
-Route::get('/dashboard',[AdminController::class,'Home'])->name('admin');
+Route::get('/', [AdminController::class, 'Login'])->name('login');
+Route::post('/', [AdminController::class, 'Login'])->name('login');
+Route::get('/register', [AdminController::class, 'Register'])->name('register');
+Route::post('/register', [AdminController::class, 'Register'])->name('register');
+Route::get('/dashboard', [AdminController::class, 'Home'])->name('admin');
+
+//Sender
+Route::get('sender/add', [SenderController::class, 'Add'])->name('addsender');
+Route::post('sender/add', [SenderController::class, 'Add'])->name('addsender');
+Route::get('sender/list', [SenderController::class, 'List'])->name('listsender');
+Route::get('sender/delete/{id}', [SenderController::class, 'Delete'])->name('deletesender');
+Route::get('sender/edit/{id}', [SenderController::class, 'Edit'])->name('editsender');
+Route::post('sender/edit/{id}', [SenderController::class, 'Edit'])->name('editsender');
