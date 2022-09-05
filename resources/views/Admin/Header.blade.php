@@ -152,15 +152,15 @@
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          <li class="nav-item">-+
+            <a class="nav-link" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
           </li>
         </ul>
         <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+          <div class="tab-pane fade   scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
               <form class="form w-100">
                 <div class="form-group d-flex">
@@ -243,7 +243,7 @@
               <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
             </div>
             <ul class="chat-list">
-              <li class="list active">
+              <li class="list">
                 <div class="profile"><img src="{{url('AdminAssets/')}}/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
@@ -303,31 +303,42 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-
-
-
-          <li class="nav-item active">
-            <a class="nav-link" href="pages/documentation/documentation.html">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link collapsed" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link collapsed" data-toggle="collapse" href="#senders" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Senders</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic" style="">
+            <div class="collapse" id="senders" style="">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{route('addsender')}}">Add</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('listsender')}}">List</a></li>
-                
+
               </ul>
             </div>
           </li>
-          
-          
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-toggle="collapse" href="#recipienst" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Recipients </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="recipienst" >
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{route('addrecipienst')}}">Add</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('listrecipienst')}}">List</a></li>
+
+              </ul>
+            </div>
+          </li>
+
+
         </ul>
       </nav>
       <!-- partial -->
