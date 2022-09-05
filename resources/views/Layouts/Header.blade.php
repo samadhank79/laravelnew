@@ -337,6 +337,20 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-toggle="collapse" href="#natureinfo" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">NatureInfo </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="natureinfo" >
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{route('addnatureinfo')}}">Add</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('listnatureinfo')}}">List</a></li>
+
+              </ul>
+            </div>
+          </li>
 
 
         </ul>

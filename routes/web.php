@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SenderController;
 use App\Http\Controllers\RecipientController;
+use App\Http\Controllers\NaturInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,11 @@ Route::get('recipienst/list', [RecipientController::class, 'List'])->name('listr
 Route::get('recipienst/delete/{id}', [RecipientController::class, 'Delete'])->name('deleterecipienst');
 Route::get('recipienst/edit/{id}', [RecipientController::class, 'Edit'])->name('editrecipienst');
 Route::post('recipienst/edit/{id}', [RecipientController::class, 'Edit'])->name('editrecipienst');
+
+//NatureInfo
+Route::get('natureinfo/add', [NaturInfoController::class, 'Add'])->name('addnatureinfo');
+Route::post('natureinfo/add', [NaturInfoController::class, 'Add'])->name('addnatureinfo');
+Route::get('natureinfo/list', [NaturInfoController::class, 'List'])->name('listnatureinfo');
+Route::get('natureinfo/delete/{id}', [NaturInfoController::class, 'Delete'])->name('deletenatureinfo');
+Route::get('natureinfo/edit/{id}', [NaturInfoController::class, 'Edit'])->name('editnatureinfo');
+Route::post('natureinfo/edit/{id}', [NaturInfoController::class, 'Edit'])->name('editnatureinfo');

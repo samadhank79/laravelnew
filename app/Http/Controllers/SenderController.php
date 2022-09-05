@@ -24,12 +24,12 @@ class SenderController extends Controller
             $sender->status = 'active';
             $sender->save();
         }
-        return view('Admin.Senders.Add');
+        return view('Senders.Add');
     }
     function List(Request $request)
     {
         $senders = DbSender::all();
-        return view('Admin.Senders.List', compact('senders'));
+        return view('Senders.List', compact('senders'));
     }
     function Edit(Request $request, $id)
     {
@@ -50,7 +50,7 @@ class SenderController extends Controller
             return \redirect()->route('listsender');
         }
         $sender = DbSender::find($id);
-        return view('Admin.Senders.Add', compact('sender'));
+        return view('Senders.Add', compact('sender'));
     }
     function Delete(Request $request, $id)
     {

@@ -1,5 +1,5 @@
 
-@extends('Admin.Master')
+@extends('Layouts.Master')
 @section('content')
 <div class="main-panel">
   <div class="content-wrapper">

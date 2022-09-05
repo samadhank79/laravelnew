@@ -16,23 +16,21 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Degignation</th>
-                                        <th>Id Proof</th>
+                                        
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($recipienst)
-                                    @foreach($recipienst as $s)
+                                    @if($natureinfo)
+                                    @foreach($natureinfo as $s)
                                     <tr>
-                                        <td>{{$s->name}}</td>
-                                        <td>{{$s->designation}}</td>
-                                        <td class="text-success">{{$s->idproof}}</i></td>
-                                        <td><label class="badge badge-warning">{{$s->status}}</label></td>
+                                        <td>{{$s->natureinfo}}</td>
+                                        <td>{{$s->status}}</td>
+                                        
                                         <td>
-                                            <a href="{{route('deleterecipienst',$s->id)}}" class="btn btn-danger">DELETE</a>
-                                            <a href="{{route('editrecipienst',$s->id)}}" class="btn btn-info">EDIT</a>
+                                            <a href="{{route('deletenatureinfo',$s->id)}}" class="btn btn-danger">DELETE</a>
+                                            <a href="{{route('editnatureinfo',$s->id)}}" class="btn btn-info">EDIT</a>
                                         </td>
                                     </tr>
                                     @endforeach
